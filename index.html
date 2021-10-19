@@ -3,6 +3,141 @@
 	<head>
 		<meta charset="utf-8">
 		<title>3研噴水企画</title>
+
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				background-color: #E0FFFF
+			}
+			.main_block {
+				width: 90%;
+				margin: 0 auto;
+				max-width: 500px;
+			}
+			.info {
+				font-size: 130%;
+			}
+
+			.open {
+				cursor:pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+				margin: 0 auto;
+				max-width: 500px;
+				padding: 3%;
+				text-align: center;
+				font-weight: bold;
+				background: #FFF;
+				border: solid 3px #6091d3;/*線*/
+				border-radius: 10px;/*角の丸み*/
+			}
+			#pop-up {
+				display: none; /* label でコントロールするので input は非表示に */
+			}
+			.overlay {
+				display: none; /* input にチェックが入るまでは非表示に */
+			}
+			#pop-up:checked + .overlay {
+				display: block;
+				z-index: 9999;
+				background-color: #00000070;
+				position: fixed;
+				width: 100%;
+				height: 100vh;
+				top: 0;
+				left: 0;
+			}
+			.window {
+				width: 90vw;
+				max-width: 380px;
+				height: 240px;
+				color: #00BCD4;
+				background: #e4fcff;/*背景色*/
+				border-radius: 6px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-top: solid 6px #1dc1d6;
+				box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+			}
+			.text {
+				font-size: 18px;
+				margin: 0;
+			}
+			.close {
+				cursor:pointer;
+				position: absolute;
+				top: 4px;
+				right: 4px;
+				font-size: 20px;
+			}
+
+			.btn_sound {
+				color: #000000;
+				background-color: #36dcf2
+				-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+				box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+				border-radius: 50%;
+				line-height: 75px;
+				width: 75px;
+				height: 75px;
+				padding: 0;
+				margin: 0 auto;
+				max-width: 500px;
+			}
+			.btn_sound:hover {
+				color: #fff;
+				background-color: #00BCD4
+			}
+			.twitter-timeline {
+				margin: 0 auto;
+				max-width: 500px;
+			}
+			.twitter-hashtag-button {
+				align-items: center;
+			}
+
+			.gotop{
+				display: block;
+				width: 60px;
+				height: 60px;
+				box-sizing: border-box;
+				background: rgb(255, 255, 255);
+				border: 1px solid #999;
+				padding-top: 30px;
+				text-align: center;
+				letter-spacing: -1px;
+				font-size: 85%;
+				text-decoration: none;
+				color: #333;
+				opacity: 0.5;
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				z-index: 10000;
+			}
+			.gotop::before{
+				content: "";
+				display: block;
+				border-top: 2px solid #333;
+				border-right: 2px solid #333;
+				width: 25%;
+				height: 25%;
+				top: 25%;
+				left: 0;
+				right: 0;
+				margin: auto;
+				position: absolute;
+				transform: rotate(-45deg);
+			}
+			.gotop:hover{
+				opacity: 1;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -12,26 +147,57 @@
 		<main>
 			<img class="top_img" src="static/imgs/top_img.png" width="100%"></img>
 
-			<p class="story">あきれかえるほど平和な町・大橋。今日も3研噴水企画の部員たちは、<br>
-			平凡な毎日を送っていた。こんな日々がいつまでも続けばいいのに……<br><br><br>
-			そんな願いも虚しく、地球侵略を目論む悪の組織・バクテーリア軍が突如<br>
-			大橋の噴水を侵略しに来たぞ！このままでは大橋から地球侵略が始まって<br>
-			しまう！未曾有のピンチから地球をまもるため、遂に奴らが現れた！<br><br><br>
-			全員青のヒーロースーツに身を包んだ彼らはそう！<br>
-			3研戦隊フンスイジャー！噴水の正義を守るため、彼らが巨悪バクテーリア軍<br>
-			に立ち向かう！負けるな！フンスイジャー！戦え！フンスイジャー！<br>
-			フンスイジャーの明日はどっちだ！？</p>
-
-			<ul class="info">
-				<li>開催日時：2021.11.6 Sat.</li>
-				<li>時間：18:30〜</li>
-				<li>場所：YouTubeライブ</li>
-			</ul>
-			<iframe class="YouTube" width="560" height="315" src="https://www.youtube.com/embed/udjuAOqTLNo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<a class="twitter-timeline" data-lang="ja" data-width="450" data-theme="light" href="https://twitter.com/3kenfunsui?ref_src=twsrc%5Etfw">Tweets by 3kenfunsui</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			<div class="main_block">
+				<p class="story">
+				<br>あきれかえるほど平和な町・大橋。今日も3研噴水企画の部員たちは、<br>
+				平凡な毎日を送っていた。こんな日々がいつまでも続けばいいのに……<br><br><br>
+				そんな願いも虚しく、地球侵略を目論む悪の組織・バクテーリア軍が突如<br>
+				大橋の噴水を侵略しに来たぞ！このままでは大橋から地球侵略が始まって<br>
+				しまう！未曾有のピンチから地球をまもるため、遂に奴らが現れた！<br><br><br>
+				全員青のヒーロースーツに身を包んだ彼らはそう！<br>
+				3研戦隊フンスイジャー！噴水の正義を守るため、彼らが巨悪バクテーリア軍<br>
+				に立ち向かう！負けるな！フンスイジャー！戦え！フンスイジャー！<br>
+				フンスイジャーの明日はどっちだ！？</p>
+	
+				<ul class="info">
+					<li>開催日時：2021.11.6 Sat.</li>
+					<li>時間：18:30〜</li>
+					<li>場所：YouTubeライブ</li>
+				</ul>
+	
+				<p class="btn_sound" align="center" onclick="play_water_sound()">水</p>
+				<audio id="sound" preload="auto">
+						<source src="static/music/potion.mp3">
+				</audio>
+				<script>
+				function play_water_sound(){
+					document.getElementById("sound").play();
+				}
+				</script>
+	
+				<!-- <button><button onclick="gtag('event', 'Click', {'event_category': 'cheer_button', 'event_label': '応援するボタンを押された回数', 'value': '0'})">フンスイジャーを応援する</button></p> -->
+				<!-- <button><button onclick="cheer_button()"></button></p> -->
+	
+				<div class="open-div">
+					<label class="open" for="pop-up">フンスイジャーを応援する</label>
+					<input type="checkbox" id="pop-up">
+					<div class="overlay">
+						<div class="window">
+							<label class="close" for="pop-up">×</label>
+							<p class="text">応援してくれてありがとう！</p>
+						</div>
+					</div>
+				</div>
+	
+				<iframe class="YouTube" width="560" height="315" src="https://www.youtube.com/embed/udjuAOqTLNo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p><a href="https://twitter.com/intent/tweet?button_hashtag=噴水企画&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #噴水企画</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+				<a class="twitter-timeline" align="center" data-lang="ja" data-width="450" data-theme="light" href="https://twitter.com/3kenfunsui?ref_src=twsrc%5Etfw">Tweets by 3kenfunsui</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
 		</main>
 
 		<footer>
+			<p align="center">Copyright 2021 3研噴水企画. All rights reserved.</p>
 		</footer>
+		<a href="#" class="gotop">TOP</a>
 	</body>
 </html>
