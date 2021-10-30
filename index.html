@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>3研噴水企画</title>
+		<title>3研噴水企画2021</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
 
@@ -11,6 +11,7 @@
 				body {
 					font-size: 90%;
 				}
+
 				.YouTube-div {
 					position: relative;
 					padding-bottom: 56.25%; /*アスペクト比 16:9の場合の縦幅*/
@@ -81,6 +82,13 @@
 				list-style-type: none;
 			}
 
+			.open-div {
+				text-align: center;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				margin-left: auto;
+				margin-right: auto;
+			}
 			.open {
 				cursor:pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
 				margin: 0 auto;
@@ -237,10 +245,27 @@
 					document.getElementById("sound").play();
 				}
 				</script>
+
+				<script>
+					var num = 33333333;
+					window.onload = function() {
+						num = 3333333333;
+						document.getElementById("display_num").innerHTML = num.toString() + "パワーが溜まったよ⛲️";
+					}
+					var cheer_func = function() {
+						num += 1/2;
+						if (num % 1 != 0) {
+							document.getElementById("display_num").innerHTML = (num - 1/2).toString() + "パワーが溜まったよ⛲️";
+						} else {
+							document.getElementById("display_num").innerHTML = num.toString() + "パワーが溜まったよ⛲️";
+						}
+					}
+				</script>
 	
 				<div class="open-div">
-					<label class="open" for="pop-up">フンスイジャーを応援する</label>
-					<input type="checkbox" id="pop-up">
+					<label class="open" for="pop-up">フンスイジャーを応援する</label><br><br>
+					<div id="display_num"></div>
+					<input type="checkbox" id="pop-up" oninput="cheer_func()">
 					<div class="overlay">
 						<div class="window">
 							<label class="close" for="pop-up">×</label>
