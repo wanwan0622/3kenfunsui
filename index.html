@@ -44,11 +44,24 @@
 					width: 15px;
 					height: 15px;
 				}
+
+				.btn, a.btn, button.btn {
+					height: 0.6rem;
+					width: 8rem;
+					padding: 0.1rem 0.1rem;
+					padding-bottom: 2rem;
+				}
 			}
 
 			@media screen and (min-width: 767px) { /* PC版 */
 				.info {
 					font-size: 130%;
+				}
+
+				.btn, a.btn, button.btn {
+					height: 0.8rem;
+					width: 8rem;
+					padding: 0.2rem 1rem;
 				}
 			}
 
@@ -206,6 +219,70 @@
 			#page_top:hover {
 				opacity: 0.8;
 			}
+
+			.btn, .btn-border-shadow, .btn-border-shadow--color2:after {
+				-webkit-box-sizing: inherit;
+				box-sizing: inherit;
+			}
+			.btn, a.btn, button.btn {
+				align: center;
+				font-size: 1rem;
+				font-weight: 700;
+				line-height: 1.5;
+				position: relative;
+				display: inline-block;
+				margin-bottom: 1.5rem;
+				cursor: pointer;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				-webkit-transition: all 0.3s;
+				transition: all 0.3s;
+				text-align: center;
+				vertical-align: middle;
+				text-decoration: none;
+				letter-spacing: 0.1em;
+				color: #212529;
+				border-radius: 0.5rem;
+			}
+
+			a.btn-border-shadow {
+				padding: calc(1.5rem - 12px) 3rem 1.5rem;
+				background: #fff;
+			}
+
+			a.btn-border-shadow:before {
+				position: absolute;
+				top: -6px;
+				left: -6px;
+				width: 100%;
+				height: 100%;
+				content: "";
+				-webkit-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+				border: 3px solid #000;
+				border-radius: 0.5rem;
+			}
+
+			a.btn-border-shadow:hover {
+				padding: calc(1.5rem - 6px) 3rem;
+			}
+
+			a.btn-border-shadow:hover:before {
+				top: 0;
+				left: 0;
+			}
+
+			a.btn-border-shadow--color2 {
+				border-radius: 100vh;
+			}
+
+			a.btn-border-shadow--color2:before {
+				border-radius: 100vh;
+				-webkit-box-shadow: 3px 3px 0 #78e5e5;
+				box-shadow: 3px 3px 0 #78e5e5;
+			}
 		</style>
 	</head>
 
@@ -249,7 +326,7 @@
 				<script>
 					var num = 33333333;
 					window.onload = function() {
-						num = 3333333333;
+						num = 3333333;
 						document.getElementById("display_num").innerHTML = num.toString() + "パワーが溜まったよ⛲️";
 					}
 					var cheer_func = function() {
@@ -276,6 +353,11 @@
 	
 				<div class="YouTube-div"><iframe class="YouTube" width="640" height="360" src="https://www.youtube.com/embed/udjuAOqTLNo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 				<p align="center"><a href="https://twitter.com/intent/tweet?button_hashtag=噴水企画&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false" data-size="large">Tweet #噴水企画</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+				<div align="center">
+					<a href="https://forms.gle/uAkRUqKboqUnszKe7" target=”_blank” align="center" class="btn btn-border-shadow btn-border-shadow--color2">ご感想はこちら</a>
+				</div>
+
 				<a class="twitter-timeline" align="center" data-lang="ja" data-width="450" data-theme="light" href="https://twitter.com/3kenfunsui?ref_src=twsrc%5Etfw">Tweets by 3kenfunsui</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</main>
