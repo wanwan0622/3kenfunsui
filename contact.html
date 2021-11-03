@@ -348,7 +348,57 @@
 				border-radius: 100vh;
 				-webkit-box-shadow: 3px 3px 0 #78e5e5;
 				box-shadow: 3px 3px 0 #78e5e5;
-			}
+            }
+            
+
+            .button09 a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                margin: 15px;
+                padding: 1em 2em;
+                width: 200px;
+                color: #333;
+                font-size: 18px;
+                font-weight: 700;
+                background-color: #89ffe9;
+                transition: 0.3s;
+            }
+            
+            .button09 a::before {
+                content: '';
+                position: absolute;
+                top: -8px;
+                left: -8px;
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+                border: 2px solid #3d9ec8;
+                transition: 0.2s;
+            }
+            
+            .button09 a::after {
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-top: 3px solid #333333;
+                border-right: 3px solid #333333;
+                transform: rotate(45deg);
+            }
+            
+            .button09 a:hover::before {
+                top: 0;
+                left: 0;
+            }
+            
+            .button09 a:hover {
+                text-decoration: none;
+                background-color: #0effd3;
+            }
+
+            .main_div {
+                margin-top: 110px;
+            }
 		</style>
     </head>
     
@@ -372,7 +422,14 @@
         </header>
 
         <main>
-            <img class="top_img" src="static/imgs/mituki.jpeg" width="100%"></img>
+            <div class="main_div">
+                <div class="button09">
+                    <a href="https://twitter.com/3kenfunsui?s=20" target="_blank">Twitter</a>
+                </div>
+                <div class="button09">
+                    <a href="https://www.instagram.com/3kenfunsui/" target="_blank">Instagram</a>
+                </div>
+            </div>
         </main>
     </body>
 </html>
