@@ -13,6 +13,10 @@
 					font-size: 90%;
 				}
 
+				.top-img-pc {
+					display: none;
+				}
+
 				.YouTube-div {
 					position: relative;
 					padding-bottom: 56.25%; /*アスペクト比 16:9の場合の縦幅*/
@@ -75,6 +79,10 @@
 				}
 
 				.br-sp {display: none; }
+
+				.top-img-phone {
+					display: none;
+				}
 			}
 
 			html {
@@ -241,7 +249,7 @@
 				background-color: #4682b4;
 			}
 
-			.top_img {
+			.top-img-pc, .top-img-phone {
 				margin-top: 80px;
 				margin-left: 0px;
 				margin-right: 0px;
@@ -528,7 +536,8 @@
 
 		<main>
 			<div class="top_img_div">
-				<img class="top_img" src="static/imgs/top_img.png" width="100%"></img>
+				<img class="top-img-pc" src="static/imgs/top_img.png" width="100%"></img>
+				<img class="top-img-phone" src="static/imgs/top_phone.jpg" width="100%"></img>
 			</div>
 
 			<div class="main_block">
