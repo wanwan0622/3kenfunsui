@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>3研噴水企画2021</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+        <link rel="icon" href="static/imgs/favicon.ico">
+
+		<style>
+			@media screen and (max-width: 479px) {  /* スマホ版 */
+				body {
+					font-size: 90%;
+				}
+
+				.YouTube-div {
+					position: relative;
+					padding-bottom: 56.25%; /*アスペクト比 16:9の場合の縦幅*/
+					height: 0;
+					overflow: hidden;
+			   	}
+			   	.YouTube-div iframe {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+				
+				.info {
+					font-size: 100%;
+				}
+				#page_top {
+					font-size: 50%;
+					width: 30px;
+					height: 30px;
+				}
+				#page_top a{
+					font-size: 50%;
+					width: 15px;
+					height: 15px;
+				}
+				#page_top a::before{
+					font-size: 50%;
+					width: 15px;
+					height: 15px;
+				}
+
+				.btn, a.btn, button.btn {
+					height: 0.6rem;
+					width: 8rem;
+					padding: 0.1rem 0.1rem;
+					padding-bottom: 2rem;
+				}
+			}
+
+            @media screen and (min-width: 767px) { /* PC版 */
+                .hamburger-menu {
+					display: none;
+                }
+                
+				.info {
+					font-size: 130%;
+				}
+
+				.btn, a.btn, button.btn {
+					height: 0.8rem;
+					width: 8rem;
+					padding: 0.2rem 1rem;
+                }
+                
+                .br-sp {display: none; }
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				background-color: #E0FFFF
+            }
+            a {
+				text-decoration:none; 
+			}
+			.main_block {
+				width: 90%;
+				margin: 0 auto;
+				max-width: 700px;
+			}
+
+			.brand {
+				font-weight: bold;
+				font-size: 20px; 
+                margin-left: 10px;
+                color: #ffffff;
+			}
+			.site-header {
+                z-index: 10000;
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 80px;
+				background-color: #3584bb }
+				.site-header__wrapper {
+					padding-top: 1rem;
+					padding-bottom: 1rem; }
+				@media (min-width: 600px) {
+				.site-header__wrapper {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding-top: 0;
+					padding-bottom: 0; } }
+				@media (min-width: 600px) {
+				.nav__wrapper {
+					display: flex; } }
+				@media (max-width: 599px) {
+				.nav__wrapper {
+					position: absolute;
+					top: 100%;
+					right: 0;
+					left: 0;
+					z-index: -1;
+					background-color: #3584bb;
+					visibility: hidden;
+					opacity: 0;
+					transform: translateY(-100%);
+					transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
+				.nav__wrapper.active {
+					visibility: visible;
+					opacity: 1;
+					transform: translateY(0); } }
+				.nav__item a {
+					display: block;
+                    padding: 1.5rem 1rem;
+                    color: #ffffff; }
+					
+				.nav__toggle {
+				display: none; }
+				@media (max-width: 599px) {
+					.nav__toggle {
+					display: block;
+					position: absolute;
+					right: 1rem;
+                    top: 1rem; } }
+                    
+            .menu-btn {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                display: flex;
+                height: 60px;
+                width: 60px;
+                justify-content: center;
+                align-items: center;
+                z-index: 90;
+                background-color: #3584bb;
+            }
+            .menu-btn span,
+            .menu-btn span:before,
+            .menu-btn span:after {
+                content: '';
+                display: block;
+                height: 3px;
+                width: 25px;
+                border-radius: 3px;
+                background-color: #ffffff;
+                position: absolute;
+            }
+            .menu-btn span:before {
+                bottom: 8px;
+            }
+            .menu-btn span:after {
+                top: 8px;
+            }
+            #menu-btn-check:checked ~ .menu-btn span {
+                background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+            }
+            #menu-btn-check:checked ~ .menu-btn span::before {
+                bottom: 0;
+                transform: rotate(45deg);
+            }
+            #menu-btn-check:checked ~ .menu-btn span::after {
+                top: 0;
+                transform: rotate(-45deg);
+            }
+            #menu-btn-check {
+                display: none;
+            }
+            .menu-content ul {
+                padding: 70px 10px 0;
+            }
+            .menu-content ul li {
+                border-bottom: solid 1px #ffffff;
+                list-style: none;
+            }
+            .menu-content ul li a {
+                display: block;
+                width: 100%;
+                font-size: 15px;
+                box-sizing: border-box;
+                color:#ffffff;
+                text-decoration: none;
+                padding: 9px 15px 10px 0;
+                position: relative;
+            }
+            .menu-content ul li a::before {
+                content: "";
+                width: 7px;
+                height: 7px;
+                border-top: solid 2px #ffffff;
+                border-right: solid 2px #ffffff;
+                transform: rotate(45deg);
+                position: absolute;
+                right: 11px;
+                top: 16px;
+            }
+            .menu-content {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 100%;/*leftの値を変更してメニューを画面外へ*/
+                z-index: 80;
+                background-color: #3584bb;
+                transition: all 0.5s;/*アニメーション設定*/
+            }
+            #menu-btn-check:checked ~ .menu-content {
+                left: 0;/*メニューを画面内へ*/
+            }
+
+			.top_img_div {
+				background-color: #4682b4;
+			}
+
+			.top_img {
+				margin-top: 80px;
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+
+			.info {
+				padding: 8px 19px;
+				margin: 2em 0;
+				color: #2c2c2f;
+				background: #cde4ff;
+				border-top: solid 5px #5989cf;
+				border-bottom: solid 5px #5989cf;
+			}
+			.info ul {
+				margin: 0; 
+				padding-top: 10px;	
+				padding-bottom: 10px;
+				padding-left: 4px;
+				padding-right: 4px;
+			}
+			ul {
+				list-style-type: none;
+			}
+
+			.open-div {
+				text-align: center;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.open {
+				cursor:pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+				margin: 0 auto;
+				max-width: 500px;
+				padding: 3%;
+				text-align: center;
+				font-weight: bold;
+				background: #FFF;
+				border: solid 3px #6091d3;/*線*/
+				border-radius: 10px;/*角の丸み*/
+			}
+			#pop-up {
+				display: none; /* label でコントロールするので input は非表示に */
+			}
+			.overlay {
+				display: none; /* input にチェックが入るまでは非表示に */
+			}
+			#pop-up:checked + .overlay {
+				display: block;
+				z-index: 9999;
+				background-color: #00000070;
+				position: fixed;
+				width: 100%;
+				height: 100vh;
+				top: 0;
+				left: 0;
+			}
+			.window {
+				width: 90vw;
+				max-width: 380px;
+				height: 240px;
+				color: #00BCD4;
+				background: #e4fcff;/*背景色*/
+				border-radius: 6px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-top: solid 6px #1dc1d6;
+				box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+			}
+			.text {
+				font-size: 18px;
+				margin: 0;
+			}
+			.close {
+				cursor:pointer;
+				position: absolute;
+				top: 4px;
+				right: 4px;
+				font-size: 20px;
+			}
+
+			.btn_sound {
+				color: #ffffff;
+				background-color: #00bfff;
+				-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+				box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+				border-radius: 50%;
+				line-height: 75px;
+				width: 75px;
+				height: 75px;
+				padding: 0;
+				margin: 0 auto;
+				max-width: 500px;
+			}
+			.btn_sound:hover {
+				color: #fff;
+				background-color: #87cefa;
+			}
+			.twitter-timeline {
+				margin: 0 auto;
+				max-width: 500px;
+				text-align: center;
+			}
+
+			#page_top{
+				width: 50px;
+				height: 50px;
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				background: #3f98ef;
+				opacity: 0.6;
+				border-radius: 50%;
+				margin-right: 10px;
+				margin-bottom: 10px;
+			}
+			#page_top a{
+				position: relative;
+				display: block;
+				width: 50px;
+				height: 50px;
+				text-decoration: none;
+			}
+			#page_top a::before{
+				font-family: 'Font Awesome 5 Free';
+				font-weight: 900;
+				content: '\f102';
+				font-size: 25px;
+				color: #fff;
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				top: -5px;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
+				text-align: center;
+			}
+			#page_top:hover {
+				opacity: 0.8;
+			}
+
+			.btn, .btn-border-shadow, .btn-border-shadow--color2:after {
+				-webkit-box-sizing: inherit;
+				box-sizing: inherit;
+			}
+			.btn, a.btn, button.btn {
+				align: center;
+				font-size: 1rem;
+				font-weight: 700;
+				line-height: 1.5;
+				position: relative;
+				display: inline-block;
+				margin-bottom: 1.5rem;
+				cursor: pointer;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				-webkit-transition: all 0.3s;
+				transition: all 0.3s;
+				text-align: center;
+				vertical-align: middle;
+				text-decoration: none;
+				letter-spacing: 0.1em;
+				color: #212529;
+				border-radius: 0.5rem;
+			}
+
+			a.btn-border-shadow {
+				padding: calc(1.5rem - 12px) 3rem 1.5rem;
+				background: #fff;
+			}
+
+			a.btn-border-shadow:before {
+				position: absolute;
+				top: -6px;
+				left: -6px;
+				width: 100%;
+				height: 100%;
+				content: "";
+				-webkit-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+				border: 3px solid #000;
+				border-radius: 0.5rem;
+			}
+
+			a.btn-border-shadow:hover {
+				padding: calc(1.5rem - 6px) 3rem;
+			}
+
+			a.btn-border-shadow:hover:before {
+				top: 0;
+				left: 0;
+			}
+
+			a.btn-border-shadow--color2 {
+				border-radius: 100vh;
+			}
+
+			a.btn-border-shadow--color2:before {
+				border-radius: 100vh;
+				-webkit-box-shadow: 3px 3px 0 #78e5e5;
+				box-shadow: 3px 3px 0 #78e5e5;
+            }
+            
+
+            .button09 a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                margin: 15px;
+                padding: 1em 2em;
+                width: 200px;
+                color: #333;
+                font-size: 18px;
+                font-weight: 700;
+                background-color: #89ffe9;
+                transition: 0.3s;
+            }
+            
+            .button09 a::before {
+                content: '';
+                position: absolute;
+                top: -8px;
+                left: -8px;
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+                border: 2px solid #3d9ec8;
+                transition: 0.2s;
+            }
+            
+            .button09 a::after {
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-top: 3px solid #333333;
+                border-right: 3px solid #333333;
+                transform: rotate(45deg);
+            }
+            
+            .button09 a:hover::before {
+                top: 0;
+                left: 0;
+            }
+            
+            .button09 a:hover {
+                text-decoration: none;
+                background-color: #0effd3;
+            }
+
+            .main_div {
+                margin-top: 110px;
+            }
+
+            .fotter {
+				background-color: #3584bb;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				position: relative;
+			}
+
+			.inline ul {
+				list-style-type: none;
+				padding-left: 0;
+			}
+			li.fotter_item {
+				background: #3584bb;
+				width: 100px;
+				height: 50px;
+				padding: 10px;
+				margin: 10px;
+			}
+			.fotter_item a {
+				color: #ffffff;
+			}
+			.inline {
+				text-align: center;
+			}
+			.inline li {
+				display: inline;
+			}
+		</style>
+    </head>
+    
+    <body class="container">
+        <header class="site-header">
+            <div class="wrapper site-header__wrapper">
+                <a href="index.html" class="brand">3研噴水企画2021</a>
+                <nav class="nav">
+                    <div class="hamburger-menu">
+                        <input type="checkbox" id="menu-btn-check">
+                        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                        <!--ここからメニュー-->
+                        <div class="menu-content">
+                            <ul>
+                                <li>
+                                    <a href="index.html">TOP</a>
+                                </li>
+                                <li>
+                                    <a href="aoi.html">葵</a>
+                                </li>
+                                <li>
+                                    <a href="soko.html">蒼子</a>
+                                </li>
+                                <li>
+                                    <a href="mituki.html">三月</a>
+                                </li>
+                                <li>
+                                    <a href="mizukaki.html">ミズカーキー</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--ここまでメニュー-->
+                    </div>
+                    <ul class="nav__wrapper">
+                        <li class="nav__item"><a href="index.html">TOP</a></li>
+                        <li class="nav__item"><a href="aoi.html">葵</a></li>
+                        <li class="nav__item"><a href="soko.html">蒼子</a></li>
+                        <li class="nav__item"><a href="mituki.html">三月</a></li>
+                        <li class="nav__item"><a href="mizukaki.html">ミズカーキー</a></li>
+                        <li class="nav__item"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="main_div">
+                <div class="button09">
+                    <a href="aoi.html">葵</a>
+                </div>
+                <div class="button09">
+                    <a href="soko.html">蒼子</a>
+                </div>
+                <div class="button09">
+                    <a href="mituki.html">美月</a>
+                </div>
+                <div class="button09">
+                    <a href="mizukaki.html">ミズカーキー</a>
+                </div>
+            </div>
+        </main>
+        <footer class="fotter">
+            <ul class="inline">
+                <li class="fotter_item"><a href="https://geikosai2021.jp/Gakusai.html">芸工祭企画一覧</a></li>
+                <li class="fotter_item"><a href="https://geikosai2021.jp/HomePage.html">芸工祭TOP</a></li>
+            </ul>
+            <p align="center">Copyright 2021 3研噴水企画.<br class="br-sp">All rights reserved.</p>
+        </footer>
+    </body>
+</html>
