@@ -488,7 +488,38 @@
 			}
 			.inline li {
 				display: inline;
-			}
+            }
+
+            .button01 {
+                text-align: right;
+            }
+
+            .button01 a {
+                display: flex;
+                justify-content: space-between;
+                margin: 0 auto;
+                padding: 1em 2em;
+                width: 90px;
+                color: #333;
+                font-size: 18px;
+                font-weight: 700;
+                background-color: #cccccc;
+                transition: 0.3s;
+            }
+            
+            .button01 a::after {
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-top: 3px solid #333333;
+                border-right: 3px solid #333333;
+                transform: rotate(45deg);
+            }
+            
+            .button01 a:hover {
+                text-decoration: none;
+                background-color: #bbbbbb;
+            }
 		</style>
     </head>
     
@@ -527,6 +558,10 @@
 
         <main>
             <img class="top_img" src="static/imgs/soko.jpeg" width="100%"></img>
+            <br>
+            <div class="button01" align="right">
+                <a href="character.html">戻る</a>
+            </div>
         </main>
         <footer class="fotter">
             <ul class="inline">
